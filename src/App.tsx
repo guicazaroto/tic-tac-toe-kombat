@@ -3,6 +3,13 @@ import { SelectAvatar } from './pages/SelectAvatar'
 import styled from 'styled-components'
 
 const AppStyles = styled.div`
+  @font-face {
+    font-family: "Kombat";
+    src: url("mkda.ttf") format("truetype");
+  }
+
+  font-family: Kombat;
+  
   position: fixed;
   width: 100%;
   height: 100%;
