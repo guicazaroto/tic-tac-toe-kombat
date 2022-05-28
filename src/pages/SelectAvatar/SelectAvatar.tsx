@@ -1,5 +1,16 @@
 import { useState } from 'react'
-import { Avatar, AvatarContainer, AvatarFace, AvatarTitle } from './SelectAvatar.styles'
+import {
+  Avatar,
+  AvatarContainer,
+  AvatarFace,
+  AvatarTitle,
+  SelectedCharacter,
+  ButtonsContainer,
+  BtnPlay,
+  BtnReset
+} from './SelectAvatar.styles'
+
+import '../../index.css'
 
 export function SelectAvatar () {
   const characters = [
@@ -21,17 +32,28 @@ export function SelectAvatar () {
     setPlayers(characters => [...characters, character])
   }
 
+  function resetCharacters () {
+    setPlayers([])
+  }
+
   return (
     <Avatar>
       <AvatarTitle />
-      <h2>Choose your fighter</h2>
       <AvatarContainer>
         {
           characters.map(character => (
             <AvatarFace onClick={() => selectCharacter(character)} source={character} key={character} />
           ))
         }
-      </AvatarContainer>  
+      </AvatarContainer>
+      <SelectedCharacter>
+        <AvatarFace source={players[0]} />
+        <ButtonsContainer>
+          <BtnPlay>Play</BtnPlay>
+          <BtnReset onClick={resetCharacters}>Reset</BtnReset>
+        </ButtonsContainer>
+        <AvatarFace source={players[1]} />
+      </SelectedCharacter>
     </Avatar>
   )
 }

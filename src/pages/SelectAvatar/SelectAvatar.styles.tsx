@@ -14,7 +14,7 @@ export const AvatarContainer = styled.div`
   border-radius: 10px;
 `
 
-export const AvatarFace = styled.div<{ source: string }>`
+export const AvatarFace = styled.div<{ source?: String }>`
     justify-content: center;
     align-items: center;
     width: 100px;
@@ -23,29 +23,76 @@ export const AvatarFace = styled.div<{ source: string }>`
     cursor: pointer;
 
     font-family: sans-serif;
-    font-size: 30px;
+    font-size: 1rem;
     font-weight: bold;
 
-    ${({ source }) =>  `background-image: url(/avatars/${source}.png)`};
+    ${({ source }) => source &&  `background-image: url(/avatars/${source}.png)`};
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 `
 
+const TitleContainer = styled.div`
+  margin-bottom: 1rem;
+`
+
 const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
 `
 
 const Subtitle = styled.span`
   display: block;
-  font-size: 4rem;
+  font-size: 3rem;
   background: -webkit-linear-gradient(#fc2c03, #f5ef42);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `
 
 export const AvatarTitle = () => (
-  <Title>Tic Toc Toe
-    <Subtitle>Kombat</Subtitle>
-  </Title>
+  <TitleContainer>
+    <Title>Tic Toc Toe
+      <Subtitle>Kombat</Subtitle>
+    </Title>
+    <p>Choose your fighter</p>
+  </TitleContainer>
+
 )
+
+export const SelectedCharacter = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+`
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  & > * {
+    margin: 0.3rem 0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+`
+
+export const BtnPlay = styled.button`
+  background-color: #ec7905;
+
+  &:hover {
+    background-color: #ee8505fe;
+  }
+`
+
+export const BtnReset = styled.button`
+ background-color: #059146;
+
+ &:hover {
+   background-color: #059146d8;
+ }
+`
+

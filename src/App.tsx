@@ -9,7 +9,6 @@ const AppStyles = styled.div`
   }
 
   font-family: Kombat;
-  
   position: fixed;
   width: 100%;
   height: 100%;
