@@ -43,7 +43,6 @@ export function SelectAvatar () {
       <SelectedCharacter>
         <div>
           <AvatarFace source={players[0]} />
-          {players[0] && <p>{ players[0] }</p>}
         </div>
         <ButtonsContainer>
           <BtnPlay onClick={playGame} disabled={!hasTwoPlayersSelected}>Play</BtnPlay>
@@ -51,7 +50,6 @@ export function SelectAvatar () {
         </ButtonsContainer>
         <div>
           <AvatarFace source={players[1]} />
-          {players[1] && <p>{ players[1] }</p>}
         </div>      
       </SelectedCharacter>
     </Avatar>

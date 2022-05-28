@@ -1,4 +1,4 @@
-import { AvatarFaceStyles } from './AvatarFace.styles'
+import { AvatarFaceStyles, AvatarFaceContainer } from './AvatarFace.styles'
 
 interface AvatarFaceProps {
   source?: String
@@ -6,5 +6,10 @@ interface AvatarFaceProps {
 }
 
 export function AvatarFace ({ source, selectCharacter }: AvatarFaceProps) {
-  return <AvatarFaceStyles source={source} onClick={selectCharacter} />
+  return (
+    <AvatarFaceContainer>
+      <AvatarFaceStyles source={source} onClick={selectCharacter} />
+      { source }
+    </ AvatarFaceContainer>
+  )
 }

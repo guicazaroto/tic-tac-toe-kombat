@@ -13,3 +13,8 @@ export const AvatarFaceStyles = styled.div<{ source?: String }>`
     background-size: cover;
     background-position: center;
 `
+
+export const AvatarFaceContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`
