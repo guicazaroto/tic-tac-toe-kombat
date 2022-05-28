@@ -25,14 +25,14 @@ export function GamePlay () {
   const { state } = useLocation() as unknown as LocationProps;
   const { players } = state
   
-  const [tictacInputs, setTictacInputs] = useState(
-    ['', '', '', '', '', '', '', '', '']
-  )
+  const [tictacInputs, setTictacInputs] = useState(Array.from({length: 9}, () => ''))
   const [currentPlayer, setCurrentPlayer] = useState(0)
   const [winners] = useState({
     [players[0]]: 0,
     [players[1]]: 0
   })
+
+  const [winner, setWinner] = useState<string | null>(null)
 
 
   useEffect(() => {
@@ -58,14 +58,26 @@ export function GamePlay () {
             tictacInputs[p[1]] === character &&
             tictacInputs[p[2]] === character
         ) {
-          console.log('Winner is: ' +  character)
+          setWinner(character)
         }
     })
   }
 
+  function playAgain () {
+    setWinner(null)
+    setTictacInputs(Array.from({length: 9}, () => ''))
+  }
+
   return (
     <>
-      <Modal />
+     { winner && (
+        <Modal
+          winner={winner}
+          isOpen={!!winner}
+          onPress={playAgain}
+        />
+      )
+     }
       <Game>
         <GameTitle>Fight!</GameTitle>
         <GameContainer>

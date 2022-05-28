@@ -8,10 +8,9 @@ export const ModalBackdrop = styled.div`
 `
 
 export const ModalBody = styled.div`
-  padding-top: 2rem;
+  padding: 2rem;
   background-color: #fff;
   width: 350px;
-  height: 300px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -29,6 +28,7 @@ export const ModalBody = styled.div`
 `
 
 export const ModalTitle = styled.h1`
+  margin-bottom: 1rem;
   font-size: 2rem;
   background: -webkit-linear-gradient(#fc2c03, #eb9b34);
   -webkit-background-clip: text;
