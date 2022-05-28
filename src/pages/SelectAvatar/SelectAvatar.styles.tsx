@@ -77,6 +77,10 @@ export const ButtonsContainer = styled.div`
     padding: .5rem 2rem;
     font-size: 1.5rem;
     cursor: pointer;
+
+    &:disabled {
+      background-color: gray;
+    }
   }
 `
 

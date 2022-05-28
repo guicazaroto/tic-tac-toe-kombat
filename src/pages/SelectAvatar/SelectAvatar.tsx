@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { useCharacters } from '../../hooks/useCharacters'
 import {
   Avatar,
@@ -11,7 +12,9 @@ import {
 } from './SelectAvatar.styles'
 
 export function SelectAvatar () {
+  const navigate = useNavigate()
   const {characters, players, setPlayers} = useCharacters()
+  const hasTwoPlayersSelected = players.length === 2
 
   function selectCharacter (character: string) {
     if (players.length === 2) return
@@ -19,10 +22,13 @@ export function SelectAvatar () {
     setPlayers(characters => [...characters, character])
   }
 
+  function playGame () {
+    navigate('/play')
+  }
+
   function resetCharacters () {
     setPlayers([])
   }
-
 
   return (
     <Avatar>
@@ -40,7 +46,7 @@ export function SelectAvatar () {
           {players[0] && <p>{ players[0] }</p>}
         </div>
         <ButtonsContainer>
-          <BtnPlay>Play</BtnPlay>
+          <BtnPlay onClick={playGame} disabled={!hasTwoPlayersSelected}>Play</BtnPlay>
           <BtnReset onClick={resetCharacters}>Reset</BtnReset>
         </ButtonsContainer>
         <div>
