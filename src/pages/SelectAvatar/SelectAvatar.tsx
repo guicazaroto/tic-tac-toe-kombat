@@ -1,20 +1,20 @@
-import './SelectAvatar.css'
+import { Avatar, AvatarContainer, AvatarFace } from './SelectAvatar.styles'
 
 export function SelectAvatar () {
   return (
-    <div className="avatar">
+    <Avatar>
       <h1>Avatar Page</h1>
-      <div className="avatar__container">
-        <div className="avatar__field"></div>
-        <div className="avatar__field"></div>
-        <div className="avatar__field"></div>
-        <div className="avatar__field"></div>
-        <div className="avatar__field"></div>
-        <div className="avatar__field"></div>
-        <div className="avatar__field"></div>
-        <div className="avatar__field"></div>
-      </div>  
-    </div>
+      <AvatarContainer>
+        <AvatarFace />
+        <AvatarFace />
+        <AvatarFace />
+        <AvatarFace />
+        <AvatarFace />
+        <AvatarFace />
+        <AvatarFace />
+        <AvatarFace />
+      </AvatarContainer>  
+    </Avatar>
   )
 }
 
