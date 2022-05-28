@@ -35,6 +35,7 @@ export function SelectAvatar () {
   function resetCharacters () {
     setPlayers([])
   }
+  
 
   return (
     <Avatar>
