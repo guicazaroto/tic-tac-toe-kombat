@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { AvatarFace } from "../../components/AvatarFace"
+import { Modal } from '../../components/Modal'
 import {
   Game,
   GameContainer,
@@ -63,21 +64,24 @@ export function GamePlay () {
   }
 
   return (
-    <Game>
-      <GameTitle>Fight!</GameTitle>
-      <GameContainer>
-        { tictacInputs.map((input, index) =>
-            <TicTacSpace
-              key={index}
-              onClick={() => makePlay(index)}
-              source={input} />
-          )
-        }
-      </GameContainer>
-      <PlayersContainer>
-        <AvatarFace source={players[0]} />
-        <AvatarFace source={players[1]} />
-      </PlayersContainer>
-    </Game>
+    <>
+      <Modal />
+      <Game>
+        <GameTitle>Fight!</GameTitle>
+        <GameContainer>
+          { tictacInputs.map((input, index) =>
+              <TicTacSpace
+                key={index}
+                onClick={() => makePlay(index)}
+                source={input} />
+            )
+          }
+        </GameContainer>
+        <PlayersContainer>
+          <AvatarFace source={players[0]} />
+          <AvatarFace source={players[1]} />
+        </PlayersContainer>
+      </Game>
+    </>
   )
 }

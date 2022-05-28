@@ -5,10 +5,9 @@ import {
   AvatarContainer,
   AvatarTitle,
   SelectedCharacter,
-  ButtonsContainer,
-  BtnPlay,
-  BtnReset
+  ButtonsContainer
 } from './SelectAvatar.styles'
+import { BtnPlay, BtnReset } from '../../components/Button'
 import { AvatarFace } from '../../components/AvatarFace'
 
 export function SelectAvatar () {
@@ -45,8 +44,8 @@ export function SelectAvatar () {
           <AvatarFace source={players[0]} />
         </div>
         <ButtonsContainer>
-          <BtnPlay onClick={playGame} disabled={!hasTwoPlayersSelected}>Play</BtnPlay>
-          <BtnReset onClick={resetCharacters}>Reset</BtnReset>
+          <BtnPlay press={playGame} isDisabled={!hasTwoPlayersSelected}>Play</BtnPlay>
+          <BtnReset press={resetCharacters}>Reset</BtnReset>
         </ButtonsContainer>
         <div>
           <AvatarFace source={players[1]} />
