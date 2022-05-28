@@ -7,7 +7,8 @@ import {
   GameContainer,
   TicTacSpace,
   PlayersContainer,
-  GameTitle
+  GameTitle,
+  GameScore
 } from './GamePlay.styles'
 
 type LocationProps = {
@@ -19,7 +20,14 @@ type LocationProps = {
 
 export function GamePlay () {
   const winnerPositions = [
-    [3,4,5], [0,1,2], [1,4,7], [6,7,8], [0,3,6], [2,4,6], [2,5,8], [0,4,8]
+    [3,4,5],
+    [0,1,2],
+    [1,4,7],
+    [6,7,8],
+    [0,3,6],
+    [2,4,6],
+    [2,5,8],
+    [0,4,8]
   ]
 
   const { state } = useLocation() as unknown as LocationProps;
@@ -27,12 +35,12 @@ export function GamePlay () {
   
   const [tictacInputs, setTictacInputs] = useState(Array.from({length: 9}, () => ''))
   const [currentPlayer, setCurrentPlayer] = useState(0)
-  const [winners] = useState({
+  
+  const [winner, setWinner] = useState<string | null>(null)
+  const [wins, setWins] = useState({
     [players[0]]: 0,
     [players[1]]: 0
   })
-
-  const [winner, setWinner] = useState<string | null>(null)
 
 
   useEffect(() => {
@@ -58,6 +66,12 @@ export function GamePlay () {
             tictacInputs[p[1]] === character &&
             tictacInputs[p[2]] === character
         ) {
+
+          setWins({
+            ...wins,
+            [character]: wins[character] + 1
+          })
+          
           setWinner(character)
         }
     })
@@ -91,6 +105,9 @@ export function GamePlay () {
         </GameContainer>
         <PlayersContainer>
           <AvatarFace source={players[0]} />
+          <GameScore>
+            {wins[players[0]]} x  {wins[players[1]]}
+          </GameScore>
           <AvatarFace source={players[1]} />
         </PlayersContainer>
       </Game>

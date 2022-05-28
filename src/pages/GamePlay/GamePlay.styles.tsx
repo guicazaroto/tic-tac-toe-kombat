@@ -55,3 +55,10 @@ export const PlayersContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `
+
+export const GameScore = styled.div`
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
