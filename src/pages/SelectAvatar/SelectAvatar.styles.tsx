@@ -13,25 +13,6 @@ export const AvatarContainer = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   border-radius: 10px;
 `
-
-export const AvatarFace = styled.div<{ source?: String }>`
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 150px;
-    border: 3px solid #666;
-    cursor: pointer;
-
-    font-family: sans-serif;
-    font-size: 1rem;
-    font-weight: bold;
-
-    ${({ source }) => source &&  `background-image: url(/avatars/${source}.png)`};
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-`
-
 const TitleContainer = styled.div`
   margin-bottom: 1rem;
 `

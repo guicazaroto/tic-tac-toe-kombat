@@ -3,13 +3,13 @@ import { useCharacters } from '../../hooks/useCharacters'
 import {
   Avatar,
   AvatarContainer,
-  AvatarFace,
   AvatarTitle,
   SelectedCharacter,
   ButtonsContainer,
   BtnPlay,
   BtnReset
 } from './SelectAvatar.styles'
+import { AvatarFace } from '../../components/AvatarFace'
 
 export function SelectAvatar () {
   const navigate = useNavigate()
@@ -23,7 +23,7 @@ export function SelectAvatar () {
   }
 
   function playGame () {
-    navigate('/play')
+    navigate('/play', { state: { players } })
   }
 
   function resetCharacters () {
@@ -36,7 +36,7 @@ export function SelectAvatar () {
       <AvatarContainer>
         {
           characters.map(character => (
-            <AvatarFace onClick={() => selectCharacter(character)} source={character} key={character} />
+            <AvatarFace selectCharacter={() => selectCharacter(character)} source={character} key={character} />
           ))
         }
       </AvatarContainer>
