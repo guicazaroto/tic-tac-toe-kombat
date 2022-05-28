@@ -50,7 +50,7 @@ const Subtitle = styled.span`
 
 export const AvatarTitle = () => (
   <TitleContainer>
-    <Title>Tic Toc Toe
+    <Title>Tic Tac Toe
       <Subtitle>Kombat</Subtitle>
     </Title>
     <p>Choose your fighter</p>

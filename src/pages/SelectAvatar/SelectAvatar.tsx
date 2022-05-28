@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCharacters } from '../../hooks/useCharacters'
 import {
   Avatar,
   AvatarContainer,
@@ -10,21 +10,8 @@ import {
   BtnReset
 } from './SelectAvatar.styles'
 
-import '../../index.css'
-
 export function SelectAvatar () {
-  const characters = [
-    'baraka',
-    'johnny-cage',
-    'kitana',
-    'liu-kang',
-    'mileena',
-    'raiden',
-    'scorpion',
-    'sub-zero'
-  ]
-
-  const [players, setPlayers] = useState<String[]>([])
+  const {characters, players, setPlayers} = useCharacters()
 
   function selectCharacter (character: string) {
     if (players.length === 2) return
@@ -35,7 +22,7 @@ export function SelectAvatar () {
   function resetCharacters () {
     setPlayers([])
   }
-  
+
 
   return (
     <Avatar>
@@ -48,12 +35,18 @@ export function SelectAvatar () {
         }
       </AvatarContainer>
       <SelectedCharacter>
-        <AvatarFace source={players[0]} />
+        <div>
+          <AvatarFace source={players[0]} />
+          {players[0] && <p>{ players[0] }</p>}
+        </div>
         <ButtonsContainer>
           <BtnPlay>Play</BtnPlay>
           <BtnReset onClick={resetCharacters}>Reset</BtnReset>
         </ButtonsContainer>
-        <AvatarFace source={players[1]} />
+        <div>
+          <AvatarFace source={players[1]} />
+          {players[1] && <p>{ players[1] }</p>}
+        </div>      
       </SelectedCharacter>
     </Avatar>
   )

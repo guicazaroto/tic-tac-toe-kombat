@@ -1,6 +1,5 @@
-import { Routes, Route, Link } from "react-router-dom";
-import { SelectAvatar } from './pages/SelectAvatar'
 import styled from 'styled-components'
+import Routes from './routes'
 
 const AppStyles = styled.div`
   @font-face {
@@ -21,9 +20,7 @@ const AppStyles = styled.div`
 function App() {
   return (
     <AppStyles>
-      <Routes>
-        <Route path="/" element={<SelectAvatar />} />
-      </Routes>
+      <Routes />
     </AppStyles>
   )
 }
