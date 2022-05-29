@@ -7,7 +7,7 @@ interface ModalTypes {
   onPress?: () => void
 }
 
-export function Modal ({ isOpen = false, winner, onPress }: ModalTypes) {
+export function WinnerModal ({ isOpen = false, winner, onPress }: ModalTypes) {
 
   function restartGame () {
     window.location.href = '/'

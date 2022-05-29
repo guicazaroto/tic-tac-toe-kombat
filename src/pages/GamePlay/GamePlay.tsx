@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { AvatarFace } from "../../components/AvatarFace"
-import { Modal } from '../../components/WinnerModal'
+import { WinnerModal as Modal } from '../../components/WinnerModal'
 import {
   Game,
   GameContainer,
