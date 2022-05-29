@@ -6,4 +6,4 @@ Use node 16 and run `npm install` and then `npm run dev` inside the project fold
 
 ## Screenshot
 
-<img width="639" alt="Captura de Tela 2022-05-28 às 21 22 46" src="https://user-images.githubusercontent.com/9921030/170846879-0b757ac3-b0ce-448d-927c-375be54f70c2.png">
+![screen](https://user-images.githubusercontent.com/9921030/170846896-af9b1f23-6b74-468e-8842-59955a8dc3e8.png)
