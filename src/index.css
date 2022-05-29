@@ -41,8 +41,10 @@ table {
 }
 
 #root {
-	height: 100%;
-	position: fixed;
-	width: 100%;
-	overflow: auto;
+	@media(min-width: 600px) {
+		height: 100%;
+		position: fixed;
+		width: 100%;
+		overflow: auto;
+	}
 }
