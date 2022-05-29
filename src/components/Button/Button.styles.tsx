@@ -14,19 +14,23 @@ const BtnBase = styled.button`
   }
 `
 
-export const BtnPlayStyles = styled(BtnBase)`
+export const BtnPlayStyles = styled(BtnBase)<{ disabled?: boolean}>`
   background-color: #ec7905;
 
-  &:hover {
-    background-color: #ee8505fe;
-  }
+  ${({disabled }) => !disabled && ` 
+    &:hover {
+      background-color: #ee8505fe;
+    }
+  `}
 `
 
 
 export const BtnResetStyles = styled(BtnBase)`
  background-color: #059146;
 
- &:hover {
-   background-color: #059146d8;
- }
+ ${({disabled }) => !disabled && ` 
+    &:hover {
+      background-color: #059146d8;
+    }
+  `}
 `

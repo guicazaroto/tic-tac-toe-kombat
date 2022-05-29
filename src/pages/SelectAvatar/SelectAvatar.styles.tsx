@@ -40,7 +40,7 @@ export const AvatarTitle = () => (
     <Title>Tic Tac Toe
       <Subtitle>Kombat</Subtitle>
     </Title>
-    <p>Choose your fighter</p>
+    <p>Choose your fighter and click "Play"</p>
   </TitleContainer>
 
 )
