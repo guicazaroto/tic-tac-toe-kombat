@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const Game = styled.div`
   text-align: center;
+  max-width: 95%;
 `
 export const GameTitle = styled.h1`
   font-size: 3rem;
@@ -23,10 +24,15 @@ export const GameContainer = styled.div`
 `
 
 export const TicTacSpace = styled.div<{ source?: String }>`
-${({ source }) => source &&  `background-image: url(/avatars/${source}.png)`};
+  ${({ source }) => source &&  `background-image: url(/avatars/${source}.png)`};
+  width: 100px;
+  height: 100px;
+
+  @media (min-width: 600px) {
+    width: 150px;
+    height: 150px;
+  }
   
-  width: 150px;
-  height: 150px;
   background-color: #000;
   cursor: pointer;
   background-repeat: no-repeat;

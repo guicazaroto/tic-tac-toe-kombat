@@ -35,7 +35,12 @@ export function SelectAvatar () {
       <AvatarContainer>
         {
           characters.map(character => (
-            <AvatarFace selectCharacter={() => selectCharacter(character)} source={character} key={character} />
+            <AvatarFace
+              key={character}
+              selectCharacter={() => selectCharacter(character)}
+              source={character}
+              hoverColor="#059146"
+            />
           ))
         }
       </AvatarContainer>

@@ -7,8 +7,14 @@ const AppStyles = styled.div`
     src: url("mkda.ttf") format("truetype");
   }
 
+  padding: 2rem 0;
+  
+  @media (min-width: 600px) {
+    position: fixed;
+    padding: 0;
+  }
+
   font-family: Kombat;
-  position: fixed;
   width: 100%;
   height: 100%;
   background-color: #eee;

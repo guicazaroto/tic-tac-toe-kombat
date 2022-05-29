@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Avatar = styled.div`
   text-align: center;
+  max-width: 90%;
 `
 
 export const AvatarContainer = styled.div`
@@ -12,6 +13,11 @@ export const AvatarContainer = styled.div`
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   border-radius: 10px;
+
+  @media (max-width: 600px) {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `
 const TitleContainer = styled.div`
   margin-bottom: 1rem;
