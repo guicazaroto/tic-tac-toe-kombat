@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { AvatarFace } from "../../components/AvatarFace"
-import { Modal } from '../../components/Modal'
+import { Modal } from '../../components/WinnerModal'
 import {
   Game,
   GameContainer,
@@ -71,10 +71,20 @@ export function GamePlay () {
             ...wins,
             [character]: wins[character] + 1
           })
-          
+
           setWinner(character)
         }
     })
+
+    checkIfHasTiedGame()
+  }
+
+  function checkIfHasTiedGame () {
+    if (winner) return
+
+    if (tictacInputs.every(position => position)) {
+        setWinner('Tied')
+    }
   }
 
   function playAgain () {

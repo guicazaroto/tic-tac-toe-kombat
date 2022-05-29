@@ -1,5 +1,5 @@
-import { BtnPlay } from "../Button"
-import { ModalBackdrop, ModalBody, ModalTitle } from './Modal.styles'
+import { BtnPlay, BtnReset } from "../Button"
+import { ModalBackdrop, ModalBody, ModalTitle } from './WinnerModal.styles'
 
 interface ModalTypes {
   winner?: string
@@ -8,13 +8,21 @@ interface ModalTypes {
 }
 
 export function Modal ({ isOpen = false, winner, onPress }: ModalTypes) {
+
+  function restartGame () {
+    window.location.href = '/'
+  }
+
   return isOpen ? (
     <ModalBackdrop>
       <ModalBody>
-        <h1>Winner is</h1>
+        {
+          winner === 'Tied' ? <h1>Gave a</h1> : <h1>Winner is</h1>
+        }
         <ModalTitle>{ winner }</ModalTitle>
         <img src="/logo.png" alt="logo"/>
         <BtnPlay press={onPress}>Play again</BtnPlay>
+        <BtnReset press={restartGame}>Restart</BtnReset>
       </ModalBody>
     </ModalBackdrop>
   ) : null
