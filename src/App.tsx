@@ -7,7 +7,7 @@ const AppStyles = styled.div`
     src: url("mkda.ttf") format("truetype");
   }
 
-  padding-top: 25%;
+  padding-top: 10%;
   padding-bottom: 2rem;
   
   @media (min-width: 600px) {
