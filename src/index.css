@@ -13,7 +13,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -23,6 +22,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background: #eee;
 }
 ol, ul {
 	list-style: none;
@@ -40,6 +40,9 @@ table {
 	border-spacing: 0;
 }
 
-body {
-	background: #eee;
+#root {
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	overflow: auto;
 }
