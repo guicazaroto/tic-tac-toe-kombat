@@ -10,6 +10,7 @@ export function AvatarFace ({ source, selectCharacter, hoverColor = '' }: Avatar
   return (
     <AvatarFaceContainer>
       <AvatarFaceStyles
+        data-testid="avatar"
         source={source}
         hoverColor={hoverColor}
         onClick={selectCharacter}

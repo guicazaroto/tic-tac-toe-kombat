@@ -1,16 +1,14 @@
 import { render, screen } from '@testing-library/react'
 import { WinnerModal } from './WinnerModal'
+import userEvent from '@testing-library/user-event'
 
 describe('Component - <WinnerModal />', () => {
-
   beforeEach(() => {
-    const onClickFn = jest.fn()
-  
     render(
       <WinnerModal
         isOpen={true}
         winner="Guilherme"
-        onPress={onClickFn}
+        onPress={() => {}}
       />
     )
   })
@@ -26,6 +24,5 @@ describe('Component - <WinnerModal />', () => {
 
     expect(btnPlay).toBeTruthy()
     expect(btnRestart).toBeTruthy()
-
   })
 })
